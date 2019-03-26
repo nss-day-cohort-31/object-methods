@@ -35,7 +35,20 @@ const allCars = [
 
 const outputElement = document.querySelector("#app")
 
+/*
+    Just get a reference to the first object since
+    they all have the same properties
+*/
+const firstCar = allCars[0]
+
+// Now iterate its keys
+outputElement.innerHTML += "<h1>Properties</h1>"
+for (const key of Object.keys(firstCar)) {
+  outputElement.innerHTML += `<div>${key}</div>`
+}
+
 // Iterate the array of cars. Individual objects stored in `car`.
+outputElement.innerHTML += "<h1>Car List</h1>"
 allCars.forEach(car => {
   const arrayOfObjectValues = Object.values(car)
   console.log(arrayOfObjectValues)
