@@ -50,12 +50,14 @@ for (const key of Object.keys(firstCar)) {
 // Iterate the array of cars. Individual objects stored in `car`.
 outputElement.innerHTML += "<h1>Car List</h1>"
 allCars.forEach(car => {
-  const arrayOfObjectValues = Object.values(car)
-  console.log(arrayOfObjectValues)
+  const arrayOfObjectEntries = Object.entries(car)
+  console.log(arrayOfObjectEntries)
+
+  outputElement.innerHTML += "<hr/>"
 
     // Iterate all of the values of the current car
-    for (const value of arrayOfObjectValues) {
-      console.log(value)
-      outputElement.innerHTML += `<div>${value}</div>`
+    for (const keyValueArray of arrayOfObjectEntries) {
+      console.log(keyValueArray)
+      outputElement.innerHTML += `<div>${keyValueArray[0]}: ${keyValueArray[1]}</div>`
     }
 })
